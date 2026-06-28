@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'motion/react';
-import { FadeIn } from './FadeIn';
+import { PopIn } from './FadeIn';
 import { PhoneMockup } from './PhoneMockup';
 
 export function Hero() {
@@ -13,7 +13,7 @@ export function Hero() {
           <motion.h1
             initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.1] text-text-primary"
           >
             Don't let your saved links disappear.
@@ -22,7 +22,7 @@ export function Hero() {
           <motion.p
             initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.25 }}
             className="mt-5 sm:mt-6 text-base sm:text-lg text-text-secondary leading-relaxed max-w-[50ch] mx-auto lg:mx-0"
           >
             DFM brings back the things you wanted to see, read, watch, and explore - before they get forgotten.
@@ -31,16 +31,19 @@ export function Hero() {
           <motion.div
             initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ type: 'spring', stiffness: 80, damping: 20, delay: 0.4 }}
             className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start"
           >
-            <a
+            <motion.a
               href="#download"
-              className="inline-flex items-center gap-2 px-6 py-3.5 bg-text-primary text-bg text-sm font-medium rounded-full hover:bg-white/90 transition-colors duration-200 active:scale-[0.98] w-full sm:w-auto justify-center"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+              className="inline-flex items-center gap-2 px-6 py-3.5 bg-text-primary text-bg text-sm font-medium rounded-full w-full sm:w-auto justify-center"
             >
               <AppleIcon />
               Download on the App Store
-            </a>
+            </motion.a>
             <a
               href="#how-it-works"
               className="text-sm text-text-secondary hover:text-text-primary transition-colors duration-200"
@@ -51,9 +54,9 @@ export function Hero() {
         </div>
 
         {/* Right: Phone Mockup */}
-        <FadeIn delay={0.3} direction="up" className="flex justify-center lg:justify-end">
+        <PopIn delay={0.3} className="flex justify-center lg:justify-end">
           <PhoneMockup />
-        </FadeIn>
+        </PopIn>
       </div>
     </section>
   );

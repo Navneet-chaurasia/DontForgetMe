@@ -1,3 +1,4 @@
+import { motion, useReducedMotion } from 'motion/react';
 import { FadeIn } from './FadeIn';
 
 const sources = [
@@ -12,29 +13,42 @@ const sources = [
 ];
 
 export function Sources() {
+  const reduce = useReducedMotion();
+
   return (
     <section className="py-20 sm:py-28 md:py-40 lg:py-48 px-5 sm:px-8 md:px-12">
       <div className="max-w-4xl mx-auto text-center">
-        <FadeIn>
+        <FadeIn spring>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight text-text-primary">
             Save from anywhere.
           </h2>
         </FadeIn>
 
-        <FadeIn delay={0.15}>
-          <div className="mt-10 sm:mt-14 md:mt-16 grid grid-cols-4 sm:flex sm:flex-wrap sm:justify-center gap-6 sm:gap-8 md:gap-10 lg:gap-12">
-            {sources.map((source) => (
-              <div key={source.name} className="flex flex-col items-center gap-2 group">
-                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-surface border border-border/50 flex items-center justify-center text-text-muted group-hover:text-text-primary group-hover:border-border transition-colors duration-200">
-                  {source.icon}
-                </div>
-                <span className="text-[9px] sm:text-[10px] text-text-muted group-hover:text-text-secondary transition-colors duration-200">
-                  {source.name}
-                </span>
+        <div className="mt-10 sm:mt-14 md:mt-16 grid grid-cols-4 sm:flex sm:flex-wrap sm:justify-center gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+          {sources.map((source, i) => (
+            <motion.div
+              key={source.name}
+              initial={reduce ? false : { opacity: 0, scale: 0.7 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{
+                type: 'spring',
+                stiffness: 150,
+                damping: 15,
+                delay: i * 0.05,
+              }}
+              whileHover={{ scale: 1.12, y: -3 }}
+              className="flex flex-col items-center gap-2 group"
+            >
+              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-surface border border-border/50 flex items-center justify-center text-text-muted group-hover:text-text-primary group-hover:border-border transition-colors duration-200">
+                {source.icon}
               </div>
-            ))}
-          </div>
-        </FadeIn>
+              <span className="text-[9px] sm:text-[10px] text-text-muted group-hover:text-text-secondary transition-colors duration-200">
+                {source.name}
+              </span>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
