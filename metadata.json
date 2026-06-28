@@ -1,6 +1,0 @@
-{
-  "name": "Don'tForgetMe App Landing Page",
-  "description": "A modern, responsive, and elegant landing page for Don'tForgetMe (DFM)—the universal inbox for saved content on iOS that prevents digital graveyards.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}

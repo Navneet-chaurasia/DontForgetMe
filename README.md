@@ -1,20 +1,31 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# DFM - Don't Forget Me
 
-# Run and deploy your AI Studio app
+Premium dark-themed landing page for the DFM iOS app.
 
-This contains everything you need to run your app locally.
+## Getting Started
 
-View your app in AI Studio: https://ai.studio/apps/47fd6020-bdac-42c7-a9ab-4855e3fc44ea
+```bash
+npm install
+npm run dev
+```
 
-## Run Locally
+## Build
 
-**Prerequisites:**  Node.js
+```bash
+npm run build
+```
 
+## Assets
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Add your app screenshots, logos, and icons to the `src/assets/` folder:
+
+- `src/assets/screenshots/` - App screenshots for the product experience section
+- `src/assets/logos/` - App logo and brand assets
+- `src/assets/icons/` - App icon variants
+
+## Stack
+
+- React 19
+- Vite
+- Tailwind CSS v4
+- Motion (Framer Motion)
