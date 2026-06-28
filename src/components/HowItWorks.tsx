@@ -1,7 +1,7 @@
 import { FadeIn, PopIn } from './FadeIn';
-import shareSheet2 from '@/assets/screenshots/dfm_share_sheet_2.webp';
+import shareSheet from '@/assets/screenshots/dfm_share_sheet.webp';
+import completedPage from '@/assets/screenshots/dfm_completed_item_page.webp';
 import homePage from '@/assets/screenshots/dfm_home_page.webp';
-import reminderPopover from '@/assets/screenshots/dfm_setting_page_set_reminder_frequency_popover.webp';
 
 export function HowItWorks() {
   return (
@@ -13,32 +13,32 @@ export function HowItWorks() {
           </h2>
         </FadeIn>
 
-        <div className="mt-12 sm:mt-16 md:mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-6 md:gap-8">
-          <PopIn delay={0.1} className="sm:col-span-2 md:col-span-1">
+        <div className="mt-12 sm:mt-16 md:mt-20 grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 md:gap-8">
+          <PopIn delay={0.1}>
             <Step
               number="1"
               title="Save"
               description="Share anything to DFM from any app on your phone."
-              image={shareSheet2}
+              image={shareSheet}
               imageAlt="iOS share sheet with DFM option"
             />
           </PopIn>
           <PopIn delay={0.2}>
             <Step
               number="2"
-              title="Organize"
-              description="DFM understands what you saved and sorts it for you."
-              image={homePage}
-              imageAlt="DFM home page with organized saves"
+              title="Complete"
+              description="Revisit and finish the things you saved."
+              image={completedPage}
+              imageAlt="DFM completed items page"
             />
           </PopIn>
           <PopIn delay={0.3}>
             <Step
               number="3"
-              title="Remember"
-              description="Come back when it matters. Never lose track again."
-              image={reminderPopover}
-              imageAlt="DFM reminder frequency settings"
+              title="Repeat"
+              description="Keep saving, keep discovering. Never lose track."
+              image={homePage}
+              imageAlt="DFM home page with organized saves"
             />
           </PopIn>
         </div>
@@ -62,11 +62,11 @@ function Step({
 }) {
   return (
     <div className="flex flex-col items-center text-center">
-      <div className="w-full aspect-[9/16] max-h-[420px] rounded-xl sm:rounded-2xl bg-surface border border-border/50 flex items-center justify-center mb-5 sm:mb-6 overflow-hidden">
+      <div className="w-full rounded-xl sm:rounded-2xl bg-surface border border-border/50 mb-5 sm:mb-6 overflow-hidden">
         <img
           src={image}
           alt={imageAlt}
-          className="w-full h-full object-cover object-top"
+          className="w-full h-auto block"
         />
       </div>
       <span className="text-xs text-accent font-medium tracking-wide">{number}</span>

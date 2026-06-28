@@ -34,15 +34,11 @@ export function FinalCta() {
         {/* App on home screen showcase */}
         <PopIn delay={0.3} className="mt-12 sm:mt-16 flex justify-center">
           <div className="relative w-[240px] sm:w-[280px] md:w-[320px]">
-            <div className="rounded-[2.5rem] sm:rounded-[3rem] border border-border bg-surface p-2 sm:p-2.5 shadow-2xl shadow-black/50">
-              <div className="rounded-[2rem] sm:rounded-[2.4rem] overflow-hidden bg-bg">
-                <img
-                  src={appOnHomeScreen}
-                  alt="DFM app icon on iPhone home screen"
-                  className="w-full h-auto block"
-                />
-              </div>
-            </div>
+            <img
+              src={appOnHomeScreen}
+              alt="DFM app icon on iPhone home screen"
+              className="w-full h-auto block rounded-2xl sm:rounded-3xl shadow-2xl shadow-black/50"
+            />
             <div className="absolute -inset-8 sm:-inset-12 -z-10 bg-accent/5 rounded-full blur-3xl" />
           </div>
         </PopIn>

@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from 'motion/react';
-import { FadeIn } from './FadeIn';
+import { FadeIn, PopIn } from './FadeIn';
+import dfmLogo from '@/assets/logos/dfm_logo.gif';
 
 export function Problem() {
   const reduce = useReducedMotion();
@@ -49,6 +50,14 @@ export function Problem() {
             But you don't.
           </p>
         </FadeIn>
+
+        <PopIn delay={0.4} className="mt-10 sm:mt-14 flex justify-center">
+          <img
+            src={dfmLogo}
+            alt="DFM animated logo"
+            className="h-auto rounded-2xl max-w-full"
+          />
+        </PopIn>
       </div>
     </section>
   );
