@@ -6,15 +6,15 @@ export function Hero() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="min-h-[100dvh] flex items-center pt-16">
-      <div className="w-full max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <section className="min-h-[100dvh] flex items-center pt-20 pb-12 md:pt-16 md:pb-0">
+      <div className="w-full max-w-7xl mx-auto px-5 sm:px-8 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
         {/* Left: Copy */}
-        <div className="max-w-xl">
+        <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
           <motion.h1
             initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.1] text-text-primary"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.1] text-text-primary"
           >
             Don't let your saved links disappear.
           </motion.h1>
@@ -23,7 +23,7 @@ export function Hero() {
             initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-6 text-lg text-text-secondary leading-relaxed max-w-[50ch]"
+            className="mt-5 sm:mt-6 text-base sm:text-lg text-text-secondary leading-relaxed max-w-[50ch] mx-auto lg:mx-0"
           >
             DFM brings back the things you wanted to see, read, watch, and explore - before they get forgotten.
           </motion.p>
@@ -32,11 +32,11 @@ export function Hero() {
             initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-10 flex flex-wrap gap-4 items-center"
+            className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start"
           >
             <a
               href="#download"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-text-primary text-bg text-sm font-medium rounded-full hover:bg-white/90 transition-colors duration-200 active:scale-[0.98]"
+              className="inline-flex items-center gap-2 px-6 py-3.5 bg-text-primary text-bg text-sm font-medium rounded-full hover:bg-white/90 transition-colors duration-200 active:scale-[0.98] w-full sm:w-auto justify-center"
             >
               <AppleIcon />
               Download on the App Store
@@ -51,7 +51,7 @@ export function Hero() {
         </div>
 
         {/* Right: Phone Mockup */}
-        <FadeIn delay={0.3} direction="left" className="flex justify-center lg:justify-end">
+        <FadeIn delay={0.3} direction="up" className="flex justify-center lg:justify-end">
           <PhoneMockup />
         </FadeIn>
       </div>

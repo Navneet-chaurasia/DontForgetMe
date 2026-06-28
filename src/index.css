@@ -15,6 +15,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -23,9 +24,15 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 ::selection {
   background-color: var(--color-accent);
   color: var(--color-bg);
+}
+
+/* Prevent horizontal overflow on mobile */
+#root {
+  overflow-x: hidden;
 }
